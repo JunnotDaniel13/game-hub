@@ -5,7 +5,7 @@ import GameCardContainer from "./GameCardContainer";
 import GameCardSkeleton from "./GameCardSkeleton";
 
 function GameGrid() {
-  const { games, error, isLoading } = useGame();
+  const { data: games, error, isLoading } = useGame();
   const cardSkeleton = [1, 2, 3, 4, 5, 6];
 
   return (
