@@ -1,4 +1,4 @@
-import { List, ListItem, Image, HStack, Text } from "@chakra-ui/react";
+import { List, ListItem, Image, HStack, Text, Spinner } from "@chakra-ui/react";
 import useGenre from "../hooks/useGenre";
 import getCroppedImage from "../services/image-url";
 
@@ -6,6 +6,7 @@ function GenreList() {
   const { data: genres, error, isLoading } = useGenre();
   return (
     <List>
+      {isLoading ? <Spinner /> : ""}
       {genres.map((genre) => {
         return (
           <ListItem key={genre.id}>
