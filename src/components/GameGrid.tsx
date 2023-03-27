@@ -19,7 +19,7 @@ function GameGrid() {
           xl: 4,
         }}
         padding={"10px"}
-        gap={"10"}
+        gap="5"
       >
         {isLoading
           ? cardSkeleton.map((id) => (
