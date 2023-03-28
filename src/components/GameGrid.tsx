@@ -24,7 +24,6 @@ function GameGrid({ selectedGenre }: Props) {
           lg: 3,
           xl: 4,
         }}
-        padding={"10px"}
         gap="5"
       >
         {isLoading

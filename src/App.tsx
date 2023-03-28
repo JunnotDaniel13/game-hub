@@ -1,8 +1,9 @@
-import { Grid, GridItem, Show } from "@chakra-ui/react";
+import { Flex, Grid, GridItem, Show } from "@chakra-ui/react";
 import { useState } from "react";
 import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
 import NavBar from "./components/NavBar";
+import PlatformSelector from "./components/PlatformSelector";
 import { Genre } from "./hooks/useGenre";
 
 function App() {
@@ -30,7 +31,10 @@ function App() {
           />
         </GridItem>
       </Show>
-      <GridItem area="main">
+      <GridItem area="main" padding="10px">
+        <Flex marginBottom={4}>
+          <PlatformSelector />
+        </Flex>
         <GameGrid selectedGenre={selectedGenre} />
       </GridItem>
     </Grid>
