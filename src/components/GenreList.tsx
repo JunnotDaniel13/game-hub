@@ -12,9 +12,10 @@ import getCroppedImage from "../services/image-url";
 
 interface Props {
   setSelectedGenre: (genre: Genre) => void;
+  selectedGenre: Genre | null;
 }
 
-function GenreList({ setSelectedGenre }: Props) {
+function GenreList({ selectedGenre, setSelectedGenre }: Props) {
   const { data: genres, error, isLoading } = useGenre();
   return (
     <List>
@@ -27,7 +28,13 @@ function GenreList({ setSelectedGenre }: Props) {
                 boxSize="32px"
                 src={getCroppedImage(genre.image_background)}
               />
-              <Button variant="link" onClick={() => setSelectedGenre(genre)}>
+              <Button
+                fontWeight={
+                  selectedGenre?.name === genre.name ? "bold" : "normal"
+                }
+                variant="link"
+                onClick={() => setSelectedGenre(genre)}
+              >
                 {genre.name}
               </Button>
             </HStack>
