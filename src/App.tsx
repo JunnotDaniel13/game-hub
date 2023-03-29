@@ -4,6 +4,7 @@ import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
 import NavBar from "./components/NavBar";
 import PlatformSelector from "./components/PlatformSelector";
+import SortSelector from "./components/sortSelector";
 import { Platform } from "./hooks/useGame";
 import { Genre } from "./hooks/useGenre";
 
@@ -38,13 +39,14 @@ function App() {
         </GridItem>
       </Show>
       <GridItem area="main" padding="10px">
-        <Flex marginBottom={4}>
+        <Flex marginBottom={4} gap={4}>
           <PlatformSelector
             selectedPlatform={gameQuery.platform}
             onSelectPlatform={(platform) =>
               setGameQuery({ ...gameQuery, platform })
             }
           />
+          <SortSelector />
         </Flex>
         <GameGrid gameQuery={gameQuery} />
       </GridItem>
